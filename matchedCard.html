@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Знайдена заявка</title>
+  <meta charset="UTF-8" />
+</head>
+<body>
+<h1>Знайдена відповідна картка</h1>
+
+<div>
+  <p>Кількість кімнат (пропозиція): <span th:text="${matchedApplication.offeredApartment.rooms}"></span></p>
+  <p>Поверх (пропозиція): <span th:text="${matchedApplication.offeredApartment.floor}"></span></p>
+  <p>Площа (пропозиція): <span th:text="${matchedApplication.offeredApartment.area}"></span> м²</p>
+</div>
+
+<div>
+  <p>Кількість кімнат (потреба): <span th:text="${matchedApplication.desiredApartment.rooms}"></span></p>
+  <p>Поверх (потреба): <span th:text="${matchedApplication.desiredApartment.floor}"></span></p>
+  <p>Площа (потреба): <span th:text="${matchedApplication.desiredApartment.area}"></span> м²</p>
+</div>
+
+<a href="/applications">Повернутися до списку заявок</a>
+</body>
+</html>

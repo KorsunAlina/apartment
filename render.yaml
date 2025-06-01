@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: apartment-exchange
+    env: java
+    plan: free
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://shinkansen.proxy.rlwy.net:45561/railway?useSSL=false&serverTimezone=UTC
+      - key: SPRING_DATASOURCE_USERNAME
+        value: root
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: fxBdRTMrczlHhQdtBLTWELohnrbpLYBr

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Список заявок</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<h2>Список заявок на обмін</h2>
+
+<table border="1">
+  <tr>
+    <th>ПІБ</th>
+    <th>Наявна квартира</th>
+    <th>Шукана квартира</th>
+  </tr>
+  <tr th:each="app : ${applications}">
+    <td th:text="${app.applicantName}"></td>
+    <td>
+      <span th:text="'Кімнат: ' + ${app.offeredApartment.rooms}"></span><br/>
+      <span th:text="'Площа: ' + ${app.offeredApartment.area}"></span><br/>
+      <span th:text="'Поверх: ' + ${app.offeredApartment.floor}"></span><br/>
+      <span th:text="'Район: ' + ${app.offeredApartment.district}"></span>
+    </td>
+    <td>
+      <span th:text="'Кімнат: ' + ${app.desiredApartment.rooms}"></span><br/>
+      <span th:text="'Площа: ' + ${app.desiredApartment.area}"></span><br/>
+      <span th:text="'Поверх: ' + ${app.desiredApartment.floor}"></span><br/>
+      <span th:text="'Район: ' + ${app.desiredApartment.district}"></span>
+    </td>
+  </tr>
+</table>
+
+<br/>
+<a href="/applications/new">Додати нову заявку</a>
+</body>
+</html>
