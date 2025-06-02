@@ -1,59 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
   <title>Знайдена заявка</title>
-  <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #e9ecef;
-        padding: 2rem;
-    }
-    h1 {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-    .card {
-        background-color: white;
-        padding: 1.5rem;
-        margin: 1rem auto;
-        max-width: 600px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .card p {
-        margin: 0.5rem 0;
-    }
-    a {
-        display: block;
-        text-align: center;
-        margin-top: 2rem;
-        color: #007BFF;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
-<h1>Знайдена відповідна картка</h1>
+<h2>Знайдена відповідна заявка</h2>
 
 <div class="card">
   <h3>Наявна квартира</h3>
   <p>Кімнат: <span th:text="${matchedApplication.offeredApartment.rooms}"></span></p>
-  <p>Поверх: <span th:text="${matchedApplication.offeredApartment.floor}"></span></p>
   <p>Площа: <span th:text="${matchedApplication.offeredApartment.area}"></span> м²</p>
+  <p>Поверх: <span th:text="${matchedApplication.offeredApartment.floor}"></span></p>
 </div>
 
 <div class="card">
-  <h3>Шукана квартира</h3>
+  <h3>Бажана квартира</h3>
   <p>Кімнат: <span th:text="${matchedApplication.desiredApartment.rooms}"></span></p>
-  <p>Поверх: <span th:text="${matchedApplication.desiredApartment.floor}"></span></p>
   <p>Площа: <span th:text="${matchedApplication.desiredApartment.area}"></span> м²</p>
+  <p>Поверх: <span th:text="${matchedApplication.desiredApartment.floor}"></span></p>
 </div>
 
-<a href="/applications">Повернутися до списку заявок</a>
+<a href="/applications">← Повернутися до списку заявок</a>
 </body>
 </html>

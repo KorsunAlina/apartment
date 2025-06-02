@@ -1,94 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>Нова заявка</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
-            padding: 2rem;
-        }
-        .form-container {
-            max-width: 600px;
-            margin: auto;
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        h2, h3 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            font-weight: bold;
-            display: block;
-            margin-top: 1rem;
-        }
-        input[type="text"], input[type="number"] {
-            width: 100%;
-            padding: 8px;
-            margin-top: 0.3rem;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-        button {
-            margin-top: 2rem;
-            width: 100%;
-            background-color: #007BFF;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        a {
-            display: block;
-            margin-top: 1rem;
-            text-align: center;
-            color: #007BFF;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
-<div class="form-container">
-    <h2>Нова заявка на обмін</h2>
-    <form th:action="@{/applications}" th:object="${application}" method="post">
-        <label>ПІБ:</label>
-        <input type="text" th:field="*{applicantName}" required/>
+<h2>Нова заявка на обмін</h2>
+<form th:action="@{/applications}" th:object="${application}" method="post">
+    <label>ПІБ:</label>
+    <input type="text" th:field="*{applicantName}" required/>
 
-        <h3>Наявна квартира</h3>
-        <label>Кімнат:</label>
-        <input type="number" th:field="*{offeredApartment.rooms}" required/>
-        <label>Площа (м²):</label>
-        <input type="number" step="0.1" th:field="*{offeredApartment.area}" required/>
-        <label>Поверх:</label>
-        <input type="number" th:field="*{offeredApartment.floor}" required/>
-        <label>Район:</label>
-        <input type="text" th:field="*{offeredApartment.district}" required/>
+    <h3>Наявна квартира</h3>
+    <label>Кімнат:</label>
+    <input type="number" th:field="*{offeredApartment.rooms}" required/>
+    <label>Площа:</label>
+    <input type="number" step="0.1" th:field="*{offeredApartment.area}" required/>
+    <label>Поверх:</label>
+    <input type="number" th:field="*{offeredApartment.floor}" required/>
+    <label>Район:</label>
+    <input type="text" th:field="*{offeredApartment.district}" required/>
 
-        <h3>Шукана квартира</h3>
-        <label>Кімнат:</label>
-        <input type="number" th:field="*{desiredApartment.rooms}" required/>
-        <label>Площа (м²):</label>
-        <input type="number" step="0.1" th:field="*{desiredApartment.area}" required/>
-        <label>Поверх:</label>
-        <input type="number" th:field="*{desiredApartment.floor}" required/>
-        <label>Район:</label>
-        <input type="text" th:field="*{desiredApartment.district}" required/>
+    <h3>Шукана квартира</h3>
+    <label>Кімнат:</label>
+    <input type="number" th:field="*{desiredApartment.rooms}" required/>
+    <label>Площа:</label>
+    <input type="number" step="0.1" th:field="*{desiredApartment.area}" required/>
+    <label>Поверх:</label>
+    <input type="number" th:field="*{desiredApartment.floor}" required/>
+    <label>Район:</label>
+    <input type="text" th:field="*{desiredApartment.district}" required/>
 
-        <button type="submit">Додати заявку</button>
-    </form>
-    <a href="/applications">До списку заявок</a>
-</div>
+    <button type="submit">Додати заявку</button>
+</form>
+<a href="/applications">← До списку заявок</a>
 </body>
 </html>
