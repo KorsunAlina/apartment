@@ -58,4 +58,5 @@ public class ApplicationService {
     public List<Application> getAllApplications() {
         return repository.findAll();
     }
+
 }
