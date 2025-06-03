@@ -53,3 +53,46 @@ table th, table td {
     border: 1px solid #ddd;
     padding: 10px;
 }
+body.menu-page {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #e1bee7);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.menu-container {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.menu-container h1 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-button {
+    padding: 15px 25px;
+    background-color: #6200ea;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: #3700b3;
+}
