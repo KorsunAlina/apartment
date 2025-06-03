@@ -55,7 +55,7 @@ table th, table td {
 }
 body.menu-page {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #e0f7fa, #e1bee7);
+    
     margin: 0;
     padding: 0;
     min-height: 100vh;
